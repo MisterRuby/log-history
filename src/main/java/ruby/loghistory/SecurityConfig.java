@@ -22,7 +22,8 @@ public class SecurityConfig {
         http
             .authorizeHttpRequests((authorizeHttpRequests) ->
                 authorizeHttpRequests
-                    .requestMatchers("/**").hasRole("USER")
+                    .requestMatchers("/log1").hasRole("USER")
+                    .requestMatchers("/**").permitAll()
             )
             .formLogin(withDefaults());
         return http.build();
@@ -32,7 +33,7 @@ public class SecurityConfig {
     public UserDetailsService userDetailsService() {
         UserDetails user = User.withDefaultPasswordEncoder()
             .username("user1")
-            .password("password")
+            .password("password1")
             .roles("USER")
             .build();
         UserDetails admin = User.withDefaultPasswordEncoder()
