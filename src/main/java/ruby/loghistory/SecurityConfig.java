@@ -22,8 +22,8 @@ public class SecurityConfig {
         http
             .authorizeHttpRequests((authorizeHttpRequests) ->
                 authorizeHttpRequests
-                    .requestMatchers("/log1").hasRole("USER")
-                    .requestMatchers("/**").permitAll()
+                    .requestMatchers("/log/encrypt").hasRole("USER")
+                    .anyRequest().permitAll()
             )
             .formLogin(withDefaults());
         return http.build();
@@ -43,9 +43,4 @@ public class SecurityConfig {
             .build();
         return new InMemoryUserDetailsManager(user, admin);
     }
-
-//    @Bean
-//    public PasswordEncoder passwordEncoder() {
-//        return PasswordEncoderFactories.createDelegatingPasswordEncoder();
-//    }
 }
