@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ruby.loghistory.encrypt.AES256Util;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -44,4 +45,15 @@ public class LogController {
             )
             .collect(Collectors.toList());
     }
+
+    @GetMapping("/log/info")
+    public void logInfo() {
+        log.info("log info!! [{}]", LocalDateTime.now());
+    }
+
+    @GetMapping("/log/error")
+    public void logError() {
+        log.error("log error!! [{}]", LocalDateTime.now());
+    }
+
 }
