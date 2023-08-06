@@ -70,7 +70,7 @@
     
         @Override
         public void addInterceptors(InterceptorRegistry registry) {
-    				// 모든 요청에 인터셉터 적용
+    		// 모든 요청에 인터셉터 적용
             registry.addInterceptor(new LogInterceptor())
                 .addPathPatterns("/**");
         }
@@ -124,7 +124,7 @@
         public class LogController {
             private final Logger logger = LoggerFactory.getLogger(this.getClass());
         		
-        		@GetMapping("/log")
+        	@GetMapping("/log")
             public void test() {
         			log.debug("log debug!!");
         		}
@@ -139,7 +139,7 @@
         @RestController
         public class LogController {
         		
-        		@GetMapping("/log")
+        	@GetMapping("/log")
             public void test() {
         			log.debug("log debug!!");
         		}
@@ -150,7 +150,7 @@
         public class LogController {
             private static final Logger log = LoggerFactory.getLogger(LogController.class);
         
-        		@GetMapping("/log")
+        	@GetMapping("/log")
             public void test() {
         			log.debug("log debug!!");
         		}
