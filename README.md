@@ -110,8 +110,7 @@
         ```yaml
         logging:
           level:
-            root: info
-        		# 설정한 root 레벨 및 더 높은 레벨의 로그를 출력한다.
+            root: info  #설정한 root 레벨 및 더 높은 레벨의 로그를 출력한다.
         ```
 
 
@@ -125,8 +124,8 @@
         		
         	@GetMapping("/log")
             public void test() {
-        			log.debug("log debug!!");
-        		}
+                log.debug("log debug!!");
+            }
         }
         
         ```
@@ -140,8 +139,8 @@
         		
         	@GetMapping("/log")
             public void test() {
-        			log.debug("log debug!!");
-        		}
+                log.debug("log debug!!");
+            }
         }
         
         // 빌드된 class 파일. @Slf4j 을 통해 log 필드가 자동으로 생성된다.
@@ -151,8 +150,8 @@
         
         	@GetMapping("/log")
             public void test() {
-        			log.debug("log debug!!");
-        		}
+                log.debug("log debug!!");
+            }
         }
         ```
 
