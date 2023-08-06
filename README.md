@@ -117,43 +117,42 @@
 - log 사용
     - LoggerFactory 를 통해 logger 객체를 얻어와 사용
 
-        ```java
-        @RestController
-        public class LogController {
-            private final Logger logger = LoggerFactory.getLogger(this.getClass());
-        		
-        	@GetMapping("/log")
-            public void test() {
-                log.debug("log debug!!");
-            }
+    ```java
+    @RestController
+    public class LogController {
+        private final Logger logger = LoggerFactory.getLogger(this.getClass());
+            
+        @GetMapping("/log")
+        public void test() {
+            log.debug("log debug!!");
         }
-        
-        ```
+    }
+    ```
 
     - Lombok 에서 제공하는 @Slf4j 애노테이션 사용
 
-        ```java
-        @Slf4j
-        @RestController
-        public class LogController {
-        		
-        	@GetMapping("/log")
-            public void test() {
-                log.debug("log debug!!");
-            }
+    ```java
+    @Slf4j
+    @RestController
+    public class LogController {
+            
+        @GetMapping("/log")
+        public void test() {
+            log.debug("log debug!!");
         }
-        
-        // 빌드된 class 파일. @Slf4j 을 통해 log 필드가 자동으로 생성된다.
-        @RestController
-        public class LogController {
-            private static final Logger log = LoggerFactory.getLogger(LogController.class);
-        
-        	@GetMapping("/log")
-            public void test() {
-                log.debug("log debug!!");
-            }
+    }
+    
+    // 빌드된 class 파일. @Slf4j 을 통해 log 필드가 자동으로 생성된다.
+    @RestController
+    public class LogController {
+        private static final Logger log = LoggerFactory.getLogger(LogController.class);
+    
+        @GetMapping("/log")
+        public void test() {
+            log.debug("log debug!!");
         }
-        ```
+    }
+    ```
 
 
 ### Log 기록 파일 저장
