@@ -70,6 +70,7 @@
     
         @Override
         public void addInterceptors(InterceptorRegistry registry) {
+    
     		/** 모든 요청에 인터셉터 적용 */
             registry.addInterceptor(new LogInterceptor())
                 .addPathPatterns("/**");
